@@ -5,30 +5,34 @@ import 'package:get/get.dart';
 
 void main() {
   testWidgets('BedrockWidget and builder smoke test', (widgetTester) async {
-    Get.lazyPut<Controller>(() => Controller());
     await widgetTester.pumpWidget(MaterialApp(
-      home: Column(
-        children: [
-          CounterBuilder(
-            child: (Controller controller) => Counter('global', controller: controller),
-          ),
-          CounterBuilder(
-            group: 'group',
-            child: (Controller controller) => Counter('group', controller: controller),
-          ),
-          ElevatedButton(
-            onPressed: Controller.instance.increase,
-            child: const Text('increaseAndRefreshGlobal'),
-          ),
-          ElevatedButton(
-            onPressed: Controller.instance.increaseWithId,
-            child: const Text('increaseAndRefreshGroup'),
-          ),
-          ElevatedButton(
-            onPressed: Controller.instance.refreshUi,
-            child: const Text('refreshAll'),
-          ),
-        ],
+      home: GetBuilder<Controller>(
+        init: Controller(),
+        builder: (_) {
+          return Column(
+            children: [
+              CounterBuilder(
+                child: (Controller controller) => Counter('global', controller: controller),
+              ),
+              CounterBuilder(
+                group: 'group',
+                child: (Controller controller) => Counter('group', controller: controller),
+              ),
+              ElevatedButton(
+                onPressed: Controller.instance.increase,
+                child: const Text('increaseAndRefreshGlobal'),
+              ),
+              ElevatedButton(
+                onPressed: Controller.instance.increaseWithId,
+                child: const Text('increaseAndRefreshGroup'),
+              ),
+              ElevatedButton(
+                onPressed: Controller.instance.refreshUi,
+                child: const Text('refreshAll'),
+              ),
+            ],
+          );
+        },
       ),
     ));
 
@@ -55,7 +59,7 @@ void main() {
   });
 }
 
-class Controller extends GetxController {
+class Controller extends BedrockController {
   static Controller get instance => Get.find();
 
   int _count = 0;
