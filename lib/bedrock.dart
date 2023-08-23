@@ -1,3 +1,3 @@
 library bedrock;
 
-export 'src/widget/bedrock_widget.dart';
+export 'src/state/bedrock_state.dart';
