@@ -13,7 +13,7 @@ You can use the BedrockWidgetBuilder to simplify update ui.
 - create a controller
 
 ```dart
-class Controller extends GetxController {
+class Controller extends BedrockController {
   static Controller get instance => Get.find();
 
   int _count = 0;

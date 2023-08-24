@@ -1,6 +1,6 @@
 name: bedrock
 description: Flutter plugin for make building app easier as a bedrock.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/ChuNglyRic/bedrock
 
 environment:
