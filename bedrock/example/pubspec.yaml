@@ -1,0 +1,19 @@
+name: bedrock_example
+description: Demonstrates how to use the bedrock plugin.
+
+environment:
+  sdk: '>=2.18.0 <4.0.0'
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # third party
+  bedrock:
+    path: ../
+    version: ^0.2.1
+  get: ^4.6.5
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,22 @@
+PODS:
+  - bedrock (0.2.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - bedrock (from `.symlinks/plugins/bedrock/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  bedrock:
+    :path: ".symlinks/plugins/bedrock/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  bedrock: d9fc3bc375f590459bdcf3bb9737f23e3b8b4d8b
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+
+PODFILE CHECKSUM: a33d5898e2b74d269f659d7315c172560da5702a
+
+COCOAPODS: 1.12.1
